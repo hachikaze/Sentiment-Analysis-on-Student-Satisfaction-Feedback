@@ -174,20 +174,3 @@ tokenizer.save_pretrained("./bert_fine_tuned_model")
 
 Feel free to **fork** this repository, submit **pull requests**, or report **issues**! 🚀
 
----
-
-## **📝 License**
-
-This project is licensed under the **MIT License**.
-
----
-
-### **🎯 Why This README is Better?**
-
-✔ **Markdown format** (GitHub-friendly, no unnecessary HTML)\
-✔ **Code highlighting** (Easy to read & copy)\
-✔ **Structured sections** (Installation, Data Preprocessing, Training, Evaluation)\
-✔ **Emojis & formatting** (More engaging & readable)
-
-**Ensure images are placed in **``** folder within your project directory for proper display on GitHub.** 🚀
-
