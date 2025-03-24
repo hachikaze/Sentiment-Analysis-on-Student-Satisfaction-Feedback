@@ -156,15 +156,18 @@ tokenizer.save_pretrained("./bert_fine_tuned_model")
 
 📈 Results & Next Steps
 
-✅ The results of the fine-tuned model, including accuracy and evaluation metrics, are available inside the notebook. Go and check them there! 📊✅ Fine-tuned a BERT model for sentiment analysis✅ Implemented custom dataset loading & tokenization✅ Trained & evaluated the model using Hugging Face's Trainer
+✅ The results of the fine-tuned model, including accuracy and evaluation metrics, are available inside the notebook. Go and check them there! 📊
+✅ Fine-tuned a BERT model for sentiment analysis
+✅ Implemented custom dataset loading & tokenization
+✅ Trained & evaluated the model using Hugging Face's Trainer
 
 🔹 Next steps:
 
-Experiment with different transformer models
+- Experiment with different transformer models
 
-Fine-tune with more training epochs or hyperparameters
+- Fine-tune with more training epochs or hyperparameters
 
-Deploy the model using Flask or FastAPI
+- Deploy the model using Flask or FastAPI
 
 ---
 
