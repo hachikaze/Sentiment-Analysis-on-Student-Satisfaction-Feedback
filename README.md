@@ -1,14 +1,12 @@
 # **Sentiment Analysis on Student Satisfaction Feedback**
 
-## **Overview**
-
+## **Overview**  
 This project fine-tunes a **BERT-based model** for **sentiment analysis** on student feedback. It utilizes **Hugging Face Transformers, PyTorch, and Scikit-Learn** for preprocessing, training, and evaluation.
 
 ---
 
-## **📌 Importing Libraries**
-
-
+## **📌 Importing Libraries**  
+![Importing Libraries](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/importing_libraries.png)  
 
 ```python
 import pandas as pd
@@ -20,9 +18,8 @@ from torch.utils.data import Dataset
 
 ---
 
-## **📂 Loading Dataset**
-
-
+## **📂 Loading Dataset**  
+![Loading Dataset](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/loading_dataset.png)  
 
 ```python
 file_path = "/content/TLC_student_feedback_dataset.xlsx"
@@ -31,9 +28,8 @@ df = pd.read_excel(file_path)
 
 ---
 
-## **📊 Splitting Data into Training and Validation Sets**
-
-
+## **📊 Splitting Data into Training and Validation Sets**  
+![Splitting Data](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/splitting_data.png)  
 
 ```python
 train_texts, val_texts, train_labels, val_labels = train_test_split(
@@ -44,9 +40,8 @@ train_texts, val_texts, train_labels, val_labels = train_test_split(
 
 ---
 
-## **🔠 Tokenizing the Data**
-
-
+## **🔠 Tokenizing the Data**  
+![Tokenization](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/tokenization.png)  
 
 ```python
 tokenizer = AutoTokenizer.from_pretrained("MarieAngeA13/Sentiment-Analysis-BERT")
@@ -77,9 +72,8 @@ class FeedbackDataset(Dataset):
 
 ---
 
-## **🏋️ Training the Model**
-
-
+## **🏋️ Training the Model**  
+![Training Model](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/training_model.png)  
 
 ```python
 model = AutoModelForSequenceClassification.from_pretrained(
@@ -106,9 +100,8 @@ training_args = TrainingArguments(
 
 ---
 
-## **🎯 Model Evaluation**
-
-
+## **🎯 Model Evaluation**  
+![Model Evaluation](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/evaluation.png)  
 
 ```python
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
@@ -126,7 +119,7 @@ def compute_metrics(eval_pred):
 
 ---
 
-## **🚀 Training the Model**
+## **🚀 Training the Model**  
 
 ```python
 trainer = Trainer(
@@ -143,9 +136,8 @@ trainer.train()
 
 ---
 
-## **💾 Saving the Fine-Tuned Model**
-
-
+## **💾 Saving the Fine-Tuned Model**  
+![Saving Model](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/saving_model.png)  
 
 ```python
 trainer.save_model("./bert_fine_tuned_model")
@@ -154,24 +146,34 @@ tokenizer.save_pretrained("./bert_fine_tuned_model")
 
 ---
 
-📈 Results & Next Steps
+## **📈 Results & Next Steps**  
+✅ The results of the fine-tuned model, including accuracy and evaluation metrics, are available inside the **notebook**. Go and check them there! 📊  
+✅ Fine-tuned a **BERT model** for **sentiment analysis**  
+✅ Implemented **custom dataset loading & tokenization**  
+✅ **Trained & evaluated the model** using Hugging Face's `Trainer`  
 
-✅ The results of the fine-tuned model, including accuracy and evaluation metrics, are available inside the notebook. Go and check them there! 📊
-✅ Fine-tuned a BERT model for sentiment analysis
-✅ Implemented custom dataset loading & tokenization
-✅ Trained & evaluated the model using Hugging Face's Trainer
-
-🔹 Next steps:
-
-- Experiment with different transformer models
-
-- Fine-tune with more training epochs or hyperparameters
-
-- Deploy the model using Flask or FastAPI
+🔹 Next steps:  
+- Experiment with **different transformer models**  
+- Fine-tune with **more training epochs or hyperparameters**  
+- Deploy the model using **Flask or FastAPI**  
 
 ---
 
-## **🤝 Contributing**
+## **🤝 Contributing**  
+Feel free to **fork** this repository, submit **pull requests**, or report **issues**! 🚀  
 
-Feel free to **fork** this repository, submit **pull requests**, or report **issues**! 🚀
+---
+
+## **📝 License**  
+This project is licensed under the **MIT License**.  
+
+---
+
+### **🎯 Why This README is Better?**  
+✔ **Markdown format** (GitHub-friendly, no unnecessary HTML)  
+✔ **Code highlighting** (Easy to read & copy)  
+✔ **Structured sections** (Installation, Data Preprocessing, Training, Evaluation)  
+✔ **Emojis & formatting** (More engaging & readable)  
+
+**Ensure images are placed in `images/` folder within your project directory for proper display on GitHub.** 🚀
 
