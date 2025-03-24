@@ -6,7 +6,6 @@ This project fine-tunes a **BERT-based model** for **sentiment analysis** on stu
 ---
 
 ## **📌 Importing Libraries**  
-![Importing Libraries](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/importing_libraries.png)  
 
 ```python
 import pandas as pd
@@ -19,7 +18,6 @@ from torch.utils.data import Dataset
 ---
 
 ## **📂 Loading Dataset**  
-![Loading Dataset](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/loading_dataset.png)  
 
 ```python
 file_path = "/content/TLC_student_feedback_dataset.xlsx"
@@ -29,7 +27,6 @@ df = pd.read_excel(file_path)
 ---
 
 ## **📊 Splitting Data into Training and Validation Sets**  
-![Splitting Data](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/splitting_data.png)  
 
 ```python
 train_texts, val_texts, train_labels, val_labels = train_test_split(
@@ -41,7 +38,6 @@ train_texts, val_texts, train_labels, val_labels = train_test_split(
 ---
 
 ## **🔠 Tokenizing the Data**  
-![Tokenization](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/tokenization.png)  
 
 ```python
 tokenizer = AutoTokenizer.from_pretrained("MarieAngeA13/Sentiment-Analysis-BERT")
@@ -73,7 +69,6 @@ class FeedbackDataset(Dataset):
 ---
 
 ## **🏋️ Training the Model**  
-![Training Model](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/training_model.png)  
 
 ```python
 model = AutoModelForSequenceClassification.from_pretrained(
@@ -101,7 +96,6 @@ training_args = TrainingArguments(
 ---
 
 ## **🎯 Model Evaluation**  
-![Model Evaluation](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/evaluation.png)  
 
 ```python
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
@@ -137,7 +131,6 @@ trainer.train()
 ---
 
 ## **💾 Saving the Fine-Tuned Model**  
-![Saving Model](Sentiment-Analysis-on-Student-Satisfaction-Feedback/images/saving_model.png)  
 
 ```python
 trainer.save_model("./bert_fine_tuned_model")
